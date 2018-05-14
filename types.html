@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="Burke Penguin Reserve" name="description">
+  <meta content="penguins, protect, antarctica, ocean, gentoo, emperor" name="keywords">
+  <meta content="Nicholas Richardson" name="author">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Types of Penguins!</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet" type="text/css">
+  <script>
+   /*
+   Function is used to execute the open and close window functions.
+   */
+   var aWindow;
+   function start(){
+     document.getElementById("openWindow").addEventListener("click", open_window, false);
+     document.getElementById("closeWindow").addEventListener("click", close_window, false);
+
+   /*
+   Function is used to execute the open and close window functions.
+   Open window function will sell the disabled property of the closeWindow
+   element to false.
+   */
+
+   }
+   function open_window(){
+     aWindow = window.open("http://animals.nationalgeographic.com/animals/birds/adelie-penguin/", "", "menu, toolbar, height=800, width = 600");
+     document.getElementById("closeWindow").disabled = false;
+   }
+   /*
+   If the close_window function is closed already, then it will alert the user
+   that it is already closed; otherwise, it will close the window.
+   */
+   function close_window(){
+     if(aWindow.closed){
+       alert("The window has been closed already");
+     }else{
+       aWindow.close();
+     }
+     
+   }
+  window.addEventListener("load", start, false);
+  </script>
+
+
+</head>
+<body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="js/jquery-1.11.2.min.js">
+  </script> <!-- Include all compiled plugins (below), or include individual files as needed --> 
+  <script src="js/bootstrap.js">
+  </script>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 offset-0">
+        <div id="banner"><img alt="banner image" class="img-responsive" height="100" src="penguin_header.jpg" title="banner image" width="1200"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 offset-0">
+        <nav class="navbar navbar-default">
+          <nav class="container-fluid">
+            <div class="collapse navbar-collapse">
+              <img alt="logo" class="right" height="66" src="penguin.jpg" title="penguin logo" width="100">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li class="active"><a href="types.html">Types of Penguins</a></li>
+                <li><a href="history.html">History of Penguins</a></li>
+                <li><a href="visitus.html">Visit Us!</a></li>
+                <li><a href="spotlight.html">Spotlight</a></li>
+                <li><a href="references.html">References</a></li>
+              </ul>
+            </div>
+          </nav>
+        </nav>
+      </div>
+      <div class="col-md-10">
+        <div id="content">
+          <img id="penguins" alt = "Penguins"> 
+          <script type="text/javascript">
+           /*
+           Listens and calls the getPenguinRandom() function
+           Array of penguin images are then used in the function
+           to randomly choose a picture to display for the webpage.
+           */
+           window.addEventListener("load", getPenguinRandom, false);
+
+           var penguins = ["1.gif", "2.gif", "3.gif"];
+
+           function getPenguinRandom() {
+             var index = Math.floor((Math.random() * penguins.length));
+             document.getElementById('penguins').src = penguins[index];
+           }
+          </script>
+          <h3 align="left"><b>Here are the types of penguins we have:</b></h3>
+          <ul>
+            <li style="list-style: none; display: inline">
+            </li>
+            <li>Adelie Penguins</li>
+            <li>Emperor Penguins</li>
+            <li>Fiordland Penguins</li>
+            <li>Chinstrap Penguins</li>
+          </ul><br>
+          <br>
+          <br>
+          <p></p>
+          <h1>Penguin Facts</h1>
+          <p>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>Penguin Species</th>
+                <th>Average Lifespan</th>
+                <th>Average Size in. (cm)</th>
+                <th>Average Weight lbs (kg)</th>
+                <th>Diet</th>
+                <th>Scientific Name</th>
+                <th>Endangered Species?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Adélie</td>
+                <td>Up to 20 years</td>
+                <td>27.5 in (70 cm)</td>
+                <td>8.5 to 12 lbs (4 to 5.5 kg)</td>
+                <td>Krill, Squid, Fish</td>
+                <td>Pygoscelis adeliae</td>
+                <td>Near threatened (NT)</td>
+              </tr>
+              <tr>
+                <td>Emperor</td>
+                <td>15 to 20 years</td>
+                <td>45 in (115 cm)</td>
+                <td>Up to 88 lbs (40 kg)</td>
+                <td>Krill, Squid, Fish</td>
+                <td>Aptenodytes forsteri</td>
+                <td>Near threatened (NT)</td>
+              </tr>
+              <tr>
+                <td>Fiordland</td>
+                <td>10 to 20 years</td>
+                <td>40 cm</td>
+                <td>4 kg</td>
+                <td>Krill, Fish, Arrow Squid</td>
+                <td>Eudyptes pachyrhynchus</td>
+                <td>Vulnerable (VU)</td>
+              </tr>
+              <tr>
+                <td>Chinstrap</td>
+                <td>Up to 20 years</td>
+                <td>28 in. (72 cm)</td>
+                <td>5.0 kg</td>
+                <td>Krill</td>
+                <td>Pygoscelis antarctica</td>
+                <td>Least Concern (LC)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div><br>
+    <br>
+    <p id="convertToCelcius"></p>
+    <script>
+      /*
+      Function returns the conversion between fahrenheit and celsius.
+      Then, the innerHTML property is used as the information to display for the
+      id "convertToCelcius"
+      */
+      function fahrenheitToCelcius(fahrenheit) {
+        return Math.floor((5/9) * (fahrenheit-32));
+      }
+      document.getElementById("convertToCelcius").innerHTML ="Did you know that the <b>average temperature in March in Antarctica <b> is " + fahrenheitToCelcius(-70) + "° C? <\/b>That's so cold!";
+
+    </script><br>
+    <!--
+    Form used to display the open and close window buttons
+    -->
+    <br>
+    <form id="aForm" method="post" name="aForm">
+      <input id="openWindow" name="openWindow" type="button" value="Open Window"> <input disabled="disabled" id="closeWindow" name="closeWindow" type="button" value="Close Window">
+    </form><br>
+    <br>
+    <br>
+    <br>
+    <p><b>Click the button below to see the last modified date and time!</b></p>
+    <!--
+    Button used to call the getLastModifiedDate() function when clicked
+    -->
+    <button onclick="getLastModifiedDate()">Get Last Modified Date</button>
+    <p id="getLastModifiedDate"></p>
+    <!--
+    Function returns the last modified date of the webpage.
+    -->
+    <script>
+    function getLastModifiedDate() {
+      var lastModifiedDate = document.lastModified;
+      document.getElementById("getLastModifiedDate").innerHTML = lastModifiedDate;
+    }
+    </script><br>
+    <p><br>
+    <a href="#top">Go to Top</a></p><br>
+    <br>
+    <br>
+    <div class="row">
+      <div class="col-md-12 offset =">
+        <div id="footer">
+          <p>This website is developed as an educational project. If any copyrighted materials are included in accordance to the multimedia fair use guidelines, a notice should be added and states that “certain materials are included under the fair use exemption of the U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use. <b><a href="index.css">CSS Style Sheet</a></b></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

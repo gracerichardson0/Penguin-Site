@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta content="Burke Penguin Reserve" name="description">
+	<meta content="penguins, protect, antarctica, ocean, gentoo, emperor" name="keywords">
+	<meta content="Nicholas Richardson" name="author">
+	<meta content="width=device-width, initial-scale=1" name="viewport">
+	<title>Project 1 Home Page: All About Penguins!</title>
+	<link href="css/bootstrap.css" rel="stylesheet">
+	<link href="index.css" rel="stylesheet" type="text/css">
+	<script>
+	/*
+	Function used to greet the user upon visiting the website.
+	The user will be prompted to enter their name.
+
+	If they have already visited the website and their name is
+	stored, it will just greet them again.
+	*/
+	function greet(){
+	   username = localStorage.getItem("username");
+	   if (username == null || username == "null"){
+	     alert("Hello visitor! Welcome to my website!");
+	     username = prompt("What is your name?");
+	     localStorage.setItem("username", username);
+	   } else {
+	     alert ("Hello, " + username + "!");
+	   }
+	 }
+
+	/*
+	Function used to reset the name of the user.
+	*/
+	function reset(){
+	   localStorage.clear();
+	   alert("Your name has been reset.");
+	}
+
+	//Listens to the methods and fires them
+	window.addEventListener("load", greet, false);
+	window.addEventListener("clear", reset, false);
+
+
+	</script>
+</head>
+<body>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script src="js/jquery-1.11.2.min.js">
+	</script> <!-- Include all compiled plugins (below), or include individual files as needed --> 
+	<script src="js/bootstrap.js">
+	</script>
+	<div class="container">
+		<div class="row">
+			<div class="col-md-12 offset-0">
+				<div id="banner"><img alt="banner image" class="img-responsive" height="100" src="penguin_header.jpg" width="1200"></div>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 offset-0">
+				<nav class="navbar navbar-default">
+					<nav class="container-fluid">
+						<div class="collapse navbar-collapse">
+							<img alt="logo" class="right" height="66" src="penguin.jpg" title="logo" width="100">
+							<ul class="nav navbar-nav">
+								<li class="active"><a href="index.html">Home</a></li>
+								<li><a href="types.html">Types of Penguins</a></li>
+								<li><a href="history.html">History of Penguins</a></li>
+								<li><a href="visitus.html">Visit Us!</a></li>
+								<li><a href="spotlight.html">Spotlight</a></li>
+								<li><a href="references.html">References</a></li>
+							</ul>
+						</div>
+					</nav>
+				</nav>
+			</div>
+			<div class="col-md-10">
+				<div id="content">
+					<h3><b>All About Penguins!</b></h3>
+					<div class="img">
+						<img alt="Emperor Penguin" height="200" src="emperor.jpg" title="Emperor Penguin" width="300">
+						<div class="desc">
+							<b>An Emperor Penguin</b>
+						</div>
+					</div>
+					<div class="img">
+						<img alt="Adelie Penguin" height="200" src="adelie.jpg" title="Adelie Penguin" width="300">
+						<div class="desc">
+							<b>An Adelie Penguin</b>
+						</div>
+					</div>
+					<div class="img">
+						<img alt="Fiordland Penguin" height="200" src="fiordland.jpg" title="Fiordland Penguin" width="300">
+						<div class="desc">
+							<b>A Fiordland Penguin</b>
+						</div>
+					</div><br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<br>
+					<p></p>
+					<h3>Welcome to the Burke Penguin Reserve!</h3>Here, we take care of penguins of multiple species, including <b>Adelie Penguins</b>, <b>Emperor Penguins</b>, <b>Chinstrap Penguins</b>, and more! You can browse our website to find out information on the types of penguins that we look over, as well as the history behind penguins and their evolution. You can also find a way to visit our penguin habitat and can meet penguins face to face, after filling out the application with your personal details. <b>We look forward to seeing you soon!</b>
+					<p><br>
+					<br>
+					<p><b></b></p>
+					<h4><b>Our mission at the Burke Penguin Reserve:</b></h4><br>
+					<div id="bullet">
+						<ul>
+							<li><b>We take care of penguins, including endangered species.</b></li>
+							<li><b>We feed, protect, and ensure the future of dying penguins.</b></li>
+							<li><b>We rehabilitate and do veterinary work on injured penguins.</b></li>
+						</ul>
+					</div>
+					<p><br>
+					<!--
+        			Functions used to display favorite penguin type
+        			Returns the favorite penguin type.
+      				-->
+					<p id="favoritePenguin"></p>
+					<script type="text/javascript">
+					 function printFavoritePenguin(penguinType) {
+					   return "<b>My favorite penguins are " + penguinType + "!</b>";
+					 }
+
+					 document.getElementById("favoritePenguin").innerHTML = printFavoritePenguin("Adelie Penguins");
+					</script><br>
+					<!--
+        			Button used to reset the local storage.
+        			When this button is clicked, it will call the
+        			reset() function.
+      				-->
+					 <button onclick="reset()">Reset Name</button><br>
+				</div>
+				<p><br>
+				<a href="#top">Go to Top</a></p><br>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 offset =">
+				<div id="footer">
+					<p>This website is developed as an educational project. If any copyrighted materials are included in accordance to the multimedia fair use guidelines, a notice should be added and states that “certain materials are included under the fair use exemption of the U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use. <b><a href="index.css">CSS Style Sheet</a></b></p>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+body {
+	font-family: cursive, "Helvetica", Helvetica, Arial, sans-serif;
+	color: black;
+	font-size: 130%;
+	background-image: url("background.jpg");
+}
+a:link {
+	color: #193156;
+	text-shadow: #707987;
+}
+a:visited {
+	color: #1769ed;
+}
+a:hover {
+	color: #051123;
+}
+#orderedbullet {
+	list-style-image: url("ordered.png");
+}
+input[type=text] {
+	box-sizing: border-box;
+	margin: 4px;
+	padding: 0px 0px 4px 4px;
+}
+input:focus {
+	background-color: powderblue;
+}
+input[type=checkbox] {
+	margin: 4px;
+	border: 1px solid black;
+	box-sizing: border-box;
+}
+#history {
+	float: right;
+	margin: 10px;
+	border: 2px solid #adc0ea;
+	width: 300px;
+	height: 200px;
+	border-radius: 8px;
+}
+.table th, .table td {
+	border-top: none !important;
+	border-bottom: none !important;
+}
+table.table {
+	box-shadow: 10px 10px 10px 10px #adc0ea;
+}
+#logo {
+	border-radius: 8px;
+	border: 2px solid #2e5696;
+}
+.form {
+	text-indent: 0px;
+}
+p {
+	text-indent: 50px;
+}
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	border: 1px solid black;
+	background-color: powderblue;
+}
+#banner {}
+#content {
+	padding: 0;
+	text-align: left;
+}
+#content h3 {
+	font-family: cursive;
+}
+.right {
+	float: right;
+	margin: 2px 2px 2px 2px;
+}
+.nav.navbar-nav {
+	background-color: #bfcfef;
+	opacity: 90%;
+	margin: 0px;
+	float: left;
+}
+.nav.navbar-nav li a:visited {
+	padding-left: 2px;
+	background-color: #adc0ea;
+	color: #4d7ae2;
+	line-height: 20px;
+	border: 1px solid black;
+}
+#bullet {
+	list-style-image: url("bullet.png");
+}
+ul {
+	list-style-type: circle;
+}
+div.img {
+	float: left;
+	margin: 4px;
+	border: 2px solid #2e5696;
+	width: 300px;
+	padding: 3px;
+	border-radius: 8px;
+}
+div.img:hover {
+	border: 2px solid #6494e0;
+	border-radius: 8px;
+}
+div.img img {
+	width: 100%;
+}
+div.desc {
+	text-align: center;
+	padding: 5px;
+	border-radius: 8px;
+}
+.nav.navbar-nav li a:hover {
+	background-color: #405a8e;
+	color: #a1afce;
+}
+.navbar.navbar-default {
+	background-color: #CDFFFF;
+	padding: 0;
+	border: 1px solid #a3618c;
+}
+#footer {
+	text-align: center;
+	background-color: #6c8ccc;
+	border: 2px solid #4869a0;
+	padding: 8px;
+	border-radius: 8px;
+}
+#footer p {
+	font-family: cursive, Verdana, arial, sans-serif;
+	color: #c9deff;
+}

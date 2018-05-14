@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="Burke Penguin Reserve" name="description">
+  <meta content="penguins, protect, antarctica, ocean, gentoo, emperor" name="keywords">
+  <meta content="Nicholas Richardson" name="author">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Visit Us</title>
+  <style>
+  #progressBar {
+    width: 50%;
+    height: 20px;
+    background-color: gray;
+  }
+
+  #actualAnimation {
+    background-color: white;
+    width: 10px;
+    height: 20px;
+  }
+</style>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet" type="text/css">
+  <script src="SpryAssets/SpryData.js" type="text/javascript"></script>
+  <script src="SpryAssets/SpryJSONDataSet.js" type="text/javascript"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js"></script>
+
+  <script type = "text/javascript">
+  var dsPenguin = new Spry.Data.JSONDataSet("penguinos.js");
+  </script>
+  <script type = "text/javascript">
+	$(function() {
+	  // Initializes the form validation
+	  $("form[name='registration']").validate({
+	    // Specifies validation rules
+	    rules: {
+	      //Specifies which inputs are rquired
+	      name: "required",
+	      weekdays: {
+	        required: true,
+	      },
+	      comments: {
+	        required: true,
+	      }
+	    },
+	    // Specifies the messages that will show up for empty/unset inputs
+	    messages: {
+	      name: "Please enter your name",
+	      weekdays: {
+	        required: "Please select a day of the week",
+	      },
+	      comments: "Please enter a comment"
+	    },
+	    //Form will be submitted
+	    submitHandler: function(form) {
+	      form.submit();
+	    }
+	  });
+	});
+  </script>
+</head>
+<body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  
+  </script> <!-- Include all compiled plugins (below), or include individual files as needed --> 
+  <script src="js/bootstrap.js">
+  </script>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 offset-0">
+        <div id="banner"><img alt="banner image" class="img-responsive" height="100" src="penguin_header.jpg" title="banner image" width="1200"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 offset-0">
+        <nav class="navbar navbar-default">
+          <nav class="container-fluid">
+            <div class="collapse navbar-collapse">
+              <img alt="logo" class="right" height="66" src="penguin.jpg" title="logo" width="100">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="types.html">Types of Penguins</a></li>
+                <li><a href="history.html">History of Penguins</a></li>
+                <li class="active"><a href="visitus.html">Visit Us!</a></li>
+                <li><a href="spotlight.html">Spotlight</a></li>
+                <li><a href="references.html">References</a></li>
+              </ul>
+            </div>
+          </nav>
+        </nav>
+      </div>
+      <div class="col-md-10">
+        <div id="content">
+          <p class="form"></p>
+          <form name = "registration" autocomplete="on" action = "visitus.html" method="post">
+            <fieldset>
+              <div id="pengus">
+              <p id="p1">Here, you can sign up to visit our penguins!</p>
+              <p id="p2">Remember to read our FAQ to find out more before visiting.</p>
+              </div>
+
+              <script>
+              var para = document.createElement("p");
+              var node = document.createTextNode("As a reminder, please do not feed the penguins.");
+              para.appendChild(node);
+              var element = document.getElementById("pengus");
+              element.appendChild(para);
+              </script>
+
+              <legend>Visit us at Burke Penguin Reserve!</legend>
+              <p class="form"><label>Name: <input name="name" type="text" id= "name"></label></p>
+              <p class="form"><label>What day of the week would you like to visit? </label><input list="days" name="weekdays" id = "weekdays" placeholder="Select a day of the week"> <datalist id="days">
+                <option value="Sunday">
+                </option>
+                <option value="Monday">
+                </option>
+                <option value="Tuesday">
+                </option>
+                <option value="Wednesday">
+                </option>
+                <option value="Thursday">
+                </option>
+                <option value="Friday">
+                </option>
+                <option value="Saturday">
+                </option>
+              </datalist></label></p>
+              <p class="form"><label>Select all of which apply to you:<br>
+              <br>
+              <input name="checklist" type="checkbox">I have been to antarctica<br>
+              <input name="checklist2" type="checkbox">Loves penguins<br>
+              <input name="checklist3" type="checkbox">Have been up close to a penguin<br>
+              <input name="checklist4" type="checkbox">Wants to take care of penguins<br>
+              <input name="checklist5" type="checkbox">Wants to prevent extinction<br>
+              <input name="checklist6" type="checkbox">Works for an NGO or environmental agency<br>
+              <input name="checklist7" type="checkbox">Student<br>
+              <input name="checklist8" type="checkbox">Teacher<br>
+              <input name="checklist8" type="checkbox">In the military<br></label></p>
+              <p class="form"><label>Why do you want to visit?<br>
+              <textarea id = "comments" name="comments" rows="8"></textarea></label></p>
+              <p class="form">Do you have any allergies to latex or other manmade materials?<br>
+              <label>Yes <input checked name="allergies" type="radio" value="yes" id = "allergies"></label><br>
+              <label>No <input name="allergies" type="radio" value="no"></label><br></p>
+              <p class="form"><label>Are you afraid of the ocean? <select name="scale">
+                <option>
+                  ..Choose One..
+                </option>
+                <option>
+                  5--Extremely
+                </option>
+                <option>
+                  4--A lot
+                </option>
+                <option>
+                  3--Somewhat
+                </option>
+                <option>
+                  2--Not really
+                </option>
+                <option>
+                  1--I love it!
+                </option>
+              </select></label></p>
+              <p class="form"><input type="submit" value="Submit"> <input type="reset" value="Reset"></p>
+            </fieldset>
+          </form>
+          <p>
+          <p><br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div spry:region="dsPenguin">
+          <h3>Penguins currently in our reserve:</h3> <br><span spry:repeatchildren="dsPenguin"><br><b>{name}</b><br>{desc}<br>{image}<br></span>
+        </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div id = "placeholder">
+          </div>
+          <div id="progressBar">
+            <div id="actualAnimation"></div>
+          </div>
+          <br>
+          <button onclick="animation()">Load a Penguin</button> 
+          <br>
+
+
+          <script type = "text/javascript">
+          function animation() {
+            var bar = document.getElementById("actualAnimation");   
+            var width = 0;
+            var position = setInterval(frame, 10);
+            function frame() {
+              if (width == 100) {
+                clearInterval(position);
+                var img = new Image();
+                var div = document.getElementById('placeholder');
+                div.appendChild(img);
+                img.src = '1.gif'; 
+              } else {
+                width++; 
+                bar.style.width = width + '%'; 
+              }
+            }
+
+          }
+          function insertImage(){
+            var src = document.getElementById("penguin");
+              var img = document.createElement("img");
+              img.src = "1.gif";
+              src.appendChild(img);
+          }
+
+          </script>
+          <br>
+          <br>
+          <br>
+
+          <a href="#top">Go to Top</a></p><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 offset =">
+          <div id="footer">
+            <p>This website is developed as an educational project. If any copyrighted materials are included in accordance to the multimedia fair use guidelines, a notice should be added and states that “certain materials are included under the fair use exemption of the U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use. <b><a href="index.css">CSS Style Sheet</a></b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

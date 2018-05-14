@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="Burke Penguin Reserve" name="description">
+  <meta content="penguins, protect, antarctica, ocean, gentoo, emperor" name="keywords">
+  <meta content="Nicholas Richardson" name="author">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <title>Penguin Programming Spotlight</title>
+  <style>
+  #penguinDay{}
+  #dancing{}
+  #penguinParagraph{}
+  #dialog{}
+  </style>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="index.css" rel="stylesheet" type="text/css">
+  <link href="css/datepicker.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/excite-bike/jquery-ui.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+  /*
+	This function is used by jquery to get the dialog box code executed.
+
+  */
+  $( function() {
+    $( "#dialog" ).dialog();
+  } );
+  </script>
+
+   <script>
+ /*
+	This function is used to reference the datepicker id, and call the datepicker() code  upon it.
+
+ */
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
+  </script>
+
+  <script>
+  /*
+	Checks if the document is ready, then calls the click() function and hides the image
+	If the button is clicked, it will hide the picture at a rate of 1000 ms, or 1 sec
+	Once clicked on the 'show' button, it will load at the same rate.
+
+  */
+  $(document).ready(function(){
+      $("#disappear").click(function(){
+          $("#penguinParagraph").hide(1000);
+          $("#dancing").hide(1000);
+      });
+      $("#appear").click(function(){
+          $("#penguinParagraph").show(1000);
+          $("#dancing").show(1000);
+      });
+  });
+</script>
+</head>
+<body>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  
+  </script> <!-- Include all compiled plugins (below), or include individual files as needed --> 
+  <script src="js/bootstrap.js">
+  </script>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 offset-0">
+        <div id="banner"><img alt="banner image" class="img-responsive" height="100" src="penguin_header.jpg" title="banner image" width="1200"></div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12 offset-0">
+        <nav class="navbar navbar-default">
+          <nav class="container-fluid">
+            <div class="collapse navbar-collapse">
+              <img alt="logo" class="right" height="66" src="penguin.jpg" title="logo" width="100">
+              <ul class="nav navbar-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="types.html">Types of Penguins</a></li>
+                <li><a href="history.html">History of Penguins</a></li>
+                <li> <a href="visitus.html">Visit Us!</a></li>
+                <li class="active"><a href="spotlight.html">Spotlight</a></li>
+                <li><a href="references.html">References</a></li>
+              </ul>
+            </div>
+          </nav>
+        </nav>
+      </div>
+      <div class="col-md-10">
+        <div id="content">
+        <h2>Check out these cool functionalities!</h2>
+        <br>
+          <div id = "penguinDay">
+          <br>
+          <button type="button" onclick="loadPenguinDay()">Click to learn something about penguins!</button>
+          </div>
+          <br>
+          <script type = "text/javascript">
+          /*
+			Creates a penguinDay XMLHttpRequest object, used to communicate
+			If the button is pressed, it will write html code directly from the text file
+			to the web page and send it.
+
+		  */
+          function loadPenguinDay(){
+            var penguinDay = new XMLHttpRequest();
+            penguinDay.onreadystatechange = function(){
+                document.getElementById("penguinDay").innerHTML = this.responseText;
+            };
+            penguinDay.open("GET", "penguinday.txt", true);
+            penguinDay.send();
+          }
+          </script>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <h4> Here's one of the penguins that we have in our reserve: </h4>
+          <div id = "dancing">
+          <img src = "dancing.gif" />
+          </div>
+          <button id="disappear">Hide Penguin</button>
+          <button id="appear">Show Penguin</button>
+          <h4> He loves to dance.</h4>
+          <br>
+          <br>
+          <br>
+          <br>
+          <div id="dialog" title="Welcome to my website!">
+          <p>Welcome to my website! Here, you can learn all about penguins, and how we are making an effort to save them. You can even check out my cool coding tricks! I hope you enjoy.</p>
+          </div>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <h4>Please pick a date that you would like to visit: </h4>
+          <p>Date: <input type="text" id="datepicker"></p>
+          <br>
+          <a href="#top">Go to Top</a></p><br>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 offset =">
+          <div id="footer">
+            <p>This website is developed as an educational project. If any copyrighted materials are included in accordance to the multimedia fair use guidelines, a notice should be added and states that “certain materials are included under the fair use exemption of the U.S. Copyright Law and have been prepared according to the multimedia fair use guidelines and are restricted from further use. <b><a href="index.css">CSS Style Sheet</a></b></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

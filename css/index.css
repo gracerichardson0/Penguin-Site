@@ -2,7 +2,7 @@ body {
 	font-family: cursive, "Helvetica", Helvetica, Arial, sans-serif;
 	color: black;
 	font-size: 130%;
-	background-image: url("background.jpg");
+	background-image: url('/images/background.jpg');
 }
 a:link {
 	color: #193156;
@@ -15,7 +15,7 @@ a:hover {
 	color: #051123;
 }
 #orderedbullet {
-	list-style-image: url("ordered.png");
+	list-style-image: url("/images/ordered.png");
 }
 input[type=text] {
 	box-sizing: border-box;
@@ -87,7 +87,7 @@ p {
 	border: 1px solid black;
 }
 #bullet {
-	list-style-image: url("bullet.png");
+	list-style-image: url("/images/bullet.png");
 }
 ul {
 	list-style-type: circle;
